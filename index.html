@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUGEMA Razak | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="profile.jpg.jpg" alt="MUGEMA Razak" class="profile-img">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-title">MUGEMA Razak</div>
+  </header>
+
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>I am a passionate developer with expertise in HTML, CSS, and JavaScript. I build responsive and interactive websites that deliver excellent user experiences.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div id="projects-list"></div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <div id="blog-list"></div>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="dashboard-form">
+      <h3>Add New Project</h3>
+      <input type="text" id="project-title" placeholder="Project Title" />
+      <input type="text" id="project-desc" placeholder="Project Description" />
+      <button onclick="addProject()">Add Project</button>
+    </div>
+
+    <div class="dashboard-form">
+      <h3>Add New Blog Post</h3>
+      <input type="text" id="blog-title" placeholder="Blog Title" />
+      <input type="text" id="blog-desc" placeholder="Blog Description" />
+      <button onclick="addBlog()">Add Blog</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form onsubmit="validateForm(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MUGEMA Razak. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

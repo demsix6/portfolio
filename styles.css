@@ -1,0 +1,282 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+  background-color: #1a1a1a;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #00ffcc;
+  object-fit: cover;
+}
+
+/* Site title (Top Right) */
+.site-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00ffcc;
+  margin-left: auto;
+}
+
+/* Nav */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #00ffcc;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #66ffe0;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Sections */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+h1, h2 {
+  color: #00ffcc;
+  margin-bottom: 20px;
+}
+
+.project, .blog-post {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project:hover, .blog-post:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #00ffcc44;
+}
+
+/* Contact Form */
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background: #2e2e2e;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  background: #3b3b3b;
+  box-shadow: 0 0 5px #00ffcc;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #00ffcc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #00e6b8;
+}
+
+#formMessage {
+  margin-top: 10px;
+  color: #66ffe0;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #999;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Dashboard Section */
+#dashboard {
+  background-color: #121212;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.dashboard-form {
+  margin-bottom: 30px;
+}
+
+.dashboard-form h3 {
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+.dashboard-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #2e2e2e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.dashboard-form button {
+  background: #00ffcc;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-form button:hover {
+  background: #00e6b8;
+}
+
+.edit-btn, .delete-btn {
+  margin-left: 10px;
+  padding: 4px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.edit-btn {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.delete-btn {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInZoom {
+  0% {opacity: 0; transform: scale(0.9);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+  0% {opacity: 0; transform: translateY(-30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-title {
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  form input, form textarea {
+    font-size: 0.9rem;
+  }
+}
